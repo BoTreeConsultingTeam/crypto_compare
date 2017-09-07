@@ -20,7 +20,7 @@ def coin_snapshot_full_by_id(self, coin_id):
     """
 
     if(coin_id == None or coin_id == ''):
-        return {'error': 'coin_id cannot be empty!'}
+        raise ValueError('coin_id cannot be empty!')
 
     return self._fetch_data(self.COIN_SNAPSHOT_FULL_BY_ID_URL+str(coin_id))
 

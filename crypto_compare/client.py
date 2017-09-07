@@ -30,14 +30,13 @@ class Client:
     MINING_CONTRACTS_URL = 'https://www.cryptocompare.com/api/data/miningcontracts/'
     MINING_EQUIPMENT_URL = 'https://www.cryptocompare.com/api/data/miningequipment/'
 
+    from .apis.coin import coin_list, coin_snapshot_full_by_id, coin_snapshot
+    from .apis.price import price, price_multi, price_multifull, price_historical
+    from .apis.average import generate_avg, day_avg
+    from .apis.subs import subs_watchlist, subs
+    from .apis.top import top_exchanges, top_volumes, top_pairs
+    from .apis.histo import histo_day, histo_hour, histo_minute
+    from .apis.mining import mining_contracts, mining_equipment
+    from .apis.uncategorized import all_exchanges, social_stats
 
-    from apis.coin import coin_list, coin_snapshot_full_by_id, coin_snapshot
-    from apis.price import price, price_multi, price_multifull, price_historical
-    from apis.average import generate_avg, day_avg
-    from apis.subs import subs_watchlist, subs
-    from apis.top import top_exchanges, top_volumes, top_pairs
-    from apis.histo import histo_day, histo_hour, histo_minute
-    from apis.mining import mining_contracts, mining_equipment
-    from apis.uncategorized import all_exchanges, social_stats
-
-    from apis.helper import _is_params_valid, _fetch_data, _get_querystring
+    from .apis.helper import _is_params_valid, _fetch_data, _get_querystring
