@@ -26,5 +26,8 @@ def social_stats(self, coin_id):
 
     id            - The id of the coin/exchange you want social data for
     """
+
+    if(coin_id == None or coin_id == ''):
+        raise ValueError('coin_id cannot be empty!')
     
     return self._fetch_data(self.SOCIAL_STATS_URL+str(coin_id))

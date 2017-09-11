@@ -57,7 +57,6 @@ def top_pairs(self, **kwargs):
     inside kwargs
 
     fsym         - From Symbol
-    tsym         - To Symbol
     extraParams  - Name of your application
     sign         - If set to true, the server will sign the requests.
     limit        - default 5, max 50, min 1
@@ -66,6 +65,6 @@ def top_pairs(self, **kwargs):
 
     fsym, tsym, querystring = self._get_querystring(kwargs)
 
-    self._is_params_valid(fsym=fsym, tsym=tsym)
+    self._is_params_valid(fsym=fsym)
 
     return self._fetch_data(self.TOP_PAIRS_URL+querystring)
