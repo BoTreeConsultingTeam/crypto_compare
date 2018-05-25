@@ -2,6 +2,8 @@
 
 CryptoCompare.com API client for Python
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/09a6441289ca3d983dfe/maintainability)](https://codeclimate.com/github/BoTreeConsultingTeam/crypto_compare/maintainability)
+
 ## Folder/code structure
 
 The code is written such that all the methods are available as instance methods in `Client` class, but grouped them in diff. modules under `apis` module to keep the code readable. All these module methods are imported inside the class `Client`.
