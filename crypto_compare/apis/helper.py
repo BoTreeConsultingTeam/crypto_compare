@@ -1,6 +1,19 @@
 import json
 import urllib2
 
+ALLOWED_KEYS = [
+    'fsym',
+    'fsyms',
+    'tsym',
+    'tsyms',
+    'ts',
+    'e',
+    'markets',
+    'extraParams',
+    'sign',
+    'tryConversion',
+    'calculationType'
+]
 
 def _is_params_valid(self, **kwargs):
 
@@ -32,31 +45,39 @@ def _get_querystring(self, kwargs):
         
         for key,value in kwargs.items():
             
-            if key == 'fsym':
+            if key == "fsym" or key == "fsyms":
                 fsym = value
-                querystring = "{}&{}".format(querystring, "fsym={}".format(fsym))
-            elif key == 'fsyms':
-                fsym = value
-                querystring = "{}&{}".format(querystring, "fsyms={}".format(fsym))
-            elif key == 'tsyms':
+            elif key == 'tsym' or key == 'tsyms':
                 tsym = value
-                querystring = "{}&{}".format(querystring, "tsyms={}".format(tsym))
-            elif key == 'tsym':
-                tsym = value
-                querystring = "{}&{}".format(querystring, "tsym={}".format(tsym))
-            elif key == 'ts':
-                querystring = "{}&{}".format(querystring, "ts={}".format(value))
-            elif key == 'e':
-                querystring = "{}&{}".format(querystring, "e={}".format(value))
-            elif key == 'markets':
-                querystring = "{}&{}".format(querystring, "markets={}".format(value))
-            elif key == 'extraParams':
-                querystring = "{}&{}".format(querystring, "extraParams={}".format(value))
-            elif key == 'sign':
-                querystring = "{}&{}".format(querystring, "sign={}".format(value))
-            elif key == 'tryConversion':
-                querystring = "{}&{}".format(querystring, "tryConversion={}".format(value))
-            elif key == 'calculationType':
-                querystring = "{}&{}".format(querystring, "calculationType={}".format(value))
+            
+            if key in ALLOWED_KEYS:
+                querystring = "{}&{}".format(querystring, "{}={}".format(key, value))
+            
+            # if key == 'fsym':
+            #     fsym = value
+            #     querystring = "{}&{}".format(querystring, "fsym={}".format(fsym))
+            # elif key == 'fsyms':
+            #     fsym = value
+            #     querystring = "{}&{}".format(querystring, "fsyms={}".format(fsym))
+            # elif key == 'tsyms':
+            #     tsym = value
+            #     querystring = "{}&{}".format(querystring, "tsyms={}".format(tsym))
+            # elif key == 'tsym':
+            #     tsym = value
+            #     querystring = "{}&{}".format(querystring, "tsym={}".format(tsym))
+            # elif key == 'ts':
+            #     querystring = "{}&{}".format(querystring, "ts={}".format(value))
+            # elif key == 'e':
+            #     querystring = "{}&{}".format(querystring, "e={}".format(value))
+            # elif key == 'markets':
+            #     querystring = "{}&{}".format(querystring, "markets={}".format(value))
+            # elif key == 'extraParams':
+            #     querystring = "{}&{}".format(querystring, "extraParams={}".format(value))
+            # elif key == 'sign':
+            #     querystring = "{}&{}".format(querystring, "sign={}".format(value))
+            # elif key == 'tryConversion':
+            #     querystring = "{}&{}".format(querystring, "tryConversion={}".format(value))
+            # elif key == 'calculationType':
+            #     querystring = "{}&{}".format(querystring, "calculationType={}".format(value))
 
     return fsym, tsym, querystring
