@@ -22,8 +22,8 @@ class Client:
 
     ALL_EXCHANGES_URL = BASE_URL + '/data/all/exchanges'
     TOP_EXCHANGES_URL = BASE_URL + '/data/top/exchanges'
-    TOP_VOLUMES_URL = 'https://min-api.cryptocompare.com/data/top/volumes'
-    TOP_PAIRS_URL = 'https://min-api.cryptocompare.com/data/top/pairs'
+    TOP_VOLUMES_URL = BASE_URL + '/data/top/volumes'
+    TOP_PAIRS_URL = BASE_URL + '/data/top/pairs'
 
     HISTO_DAY_URL = BASE_URL + '/data/histoday'
     HISTO_HOUR_URL = BASE_URL + '/data/histohour'
