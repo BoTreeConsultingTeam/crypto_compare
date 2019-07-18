@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open('README.rst') as f:
     readme = f.read()
@@ -13,8 +13,8 @@ setup(
         author_email='parth.barot@botreetechnologies.com',
         keywords='crypto cryptocurrency wrapper cryptocompare crypto_compare',
         license='MIT',
-        python_requires='>=2.7',
-        packages=['crypto_compare'],
-        classifiers=['Programming Language :: Python :: 2.7'],
-        install_requires=['urllib2', 'pytest']
+        python_requires='>=3.6',
+        packages=find_packages(),
+        classifiers=['Programming Language :: Python :: 3.6'],
+        install_requires=['urllib3', 'pytest']
     )
