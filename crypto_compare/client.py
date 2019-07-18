@@ -1,34 +1,38 @@
 
 class Client:
+    def __init__(self, apikey):
+        self.apikey = apikey
+
+    BASE_URL = 'https://min-api.cryptocompare.com'
     
-    COIN_LIST_URL = 'https://www.cryptocompare.com/api/data/coinlist/'
+    COIN_LIST_URL = BASE_URL + '/data/all/coinlist'
     COIN_SNAPSHOT_FULL_BY_ID_URL = 'https://www.cryptocompare.com/api/data/coinsnapshotfullbyid/?id='
-    COIN_SNAPSHOT_URL  = 'https://www.cryptocompare.com/api/data/coinsnapshot/'
+    COIN_SNAPSHOT_URL  = BASE_URL + '/data/top/exchanges/full'
 
-    PRICE_URL = 'https://min-api.cryptocompare.com/data/price'
-    PRICE_MULTI_URL = 'https://min-api.cryptocompare.com/data/pricemulti'
-    PRICE_MULTI_FULL_URL = 'https://min-api.cryptocompare.com/data/pricemultifull'
-    PRICE_HISTORICAL_URL = 'https://min-api.cryptocompare.com/data/pricehistorical'
+    PRICE_URL = BASE_URL + '/data/price'
+    PRICE_MULTI_URL = BASE_URL + '/data/pricemulti'
+    PRICE_MULTI_FULL_URL = BASE_URL + '/data/pricemultifull'
+    PRICE_HISTORICAL_URL = BASE_URL + '/data/pricehistorical'
 
-    GENERATE_AVG_URL = 'https://min-api.cryptocompare.com/data/generateAvg'
-    DAY_AVG_URL = 'https://min-api.cryptocompare.com/data/dayAvg'
+    GENERATE_AVG_URL = BASE_URL + '/data/generateAvg'
+    DAY_AVG_URL = BASE_URL + '/data/dayAvg'
 
-    SUBS_WATCH_LIST_URL = 'https://min-api.cryptocompare.com/data/subsWatchlist'
-    SUBS_URL = 'https://min-api.cryptocompare.com/data/subs'
+    SUBS_WATCH_LIST_URL = BASE_URL + '/data/subsWatchlist'
+    SUBS_URL = BASE_URL + '/data/subs'
 
-    ALL_EXCHANGES_URL = 'https://min-api.cryptocompare.com/data/all/exchanges'
-    TOP_EXCHANGES_URL = 'https://min-api.cryptocompare.com/data/top/exchanges'
+    ALL_EXCHANGES_URL = BASE_URL + '/data/all/exchanges'
+    TOP_EXCHANGES_URL = BASE_URL + '/data/top/exchanges'
     TOP_VOLUMES_URL = 'https://min-api.cryptocompare.com/data/top/volumes'
     TOP_PAIRS_URL = 'https://min-api.cryptocompare.com/data/top/pairs'
 
-    HISTO_DAY_URL = 'https://min-api.cryptocompare.com/data/histoday'
-    HISTO_HOUR_URL = 'https://min-api.cryptocompare.com/data/histohour'
-    HISTO_MINUTE_URL = 'https://min-api.cryptocompare.com/data/histominute'
+    HISTO_DAY_URL = BASE_URL + '/data/histoday'
+    HISTO_HOUR_URL = BASE_URL + '/data/histohour'
+    HISTO_MINUTE_URL = BASE_URL + '/data/histominute'
 
     SOCIAL_STATS_URL = 'https://www.cryptocompare.com/api/data/socialstats?id='
 
-    MINING_CONTRACTS_URL = 'https://www.cryptocompare.com/api/data/miningcontracts/'
-    MINING_EQUIPMENT_URL = 'https://www.cryptocompare.com/api/data/miningequipment/'
+    MINING_CONTRACTS_URL = BASE_URL + '/data/mining/contracts/general'
+    MINING_EQUIPMENT_URL = BASE_URL + '/data/mining/equipment/general'
 
     from .apis.coin import coin_list, coin_snapshot_full_by_id, coin_snapshot
     from .apis.price import price, price_multi, price_multifull, price_historical
