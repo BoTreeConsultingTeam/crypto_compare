@@ -29,7 +29,7 @@ def _is_params_valid(self, **kwargs):
 
 def _fetch_data(self, url):
 
-    print('Calling URL - ' + url)
+    #print('Calling URL - ' + url)
     
     json_response = json.load(urllib.request.urlopen(url))
     
